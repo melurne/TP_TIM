@@ -48,14 +48,19 @@ L'utilisation du codage Manchester amène un premier zéro 2 foix plus éloigné
 
 Pour simuler l'action d'un canal de transmission, on va filtrer le signal afin de ne transmettre que le premier lobe de la FFT. Pour cela on annule le signal à partir du premier echantillon au dessous de 0.
 
-![](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/filtrage%20nrz.PNG)
+![](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/filtrage%20nrz.PNG)
 
 ### Inclusion de bruit
 
 Pour simuler l'effet d'un canal de propagation on ajoute au signal filtré un bruit gaussien d'écart type paramètrable.
 
+![](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/Signal%20%2B%20bruit.PNG)
+
 On va ensuite utiliser le niveau moyen du signal sur une période pour discriminer un bit 1 d'un bit 0 et comparer les signaux en entrée et en sortie du canal. On compte le nombre de bit faux sur le nombre de bit total pour obtenir le rapport signal sur bruit.
 
+![](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/signal%20filtr%C2%82.PNG)
+
+![](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/Signal_recompose.PNG)
 
 
 # Chaine De Transmission RF
