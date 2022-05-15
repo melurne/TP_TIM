@@ -67,42 +67,51 @@ On va ensuite utiliser le niveau moyen du signal sur une période pour discrimin
 
 # Chaine De Transmission RF
 
-On va réaliser le montage schématisée si dessous :
+Pour ce TP, nous allons réaliser le montage schématisé ci-dessous :
 
-![](/home/maxence/TP_TIM/images/ChaineDeTransmission/SchemaChaineDeTranmission.png)
+![](https://github.com/melurne/TP_TIM/blob/master/images/ChaineDeTransmission/SchemaChaineDeTranmission.png)
 
-Le but du montage est de simuler une chaîne de transmission modulée QPSK.
+Le but du montage est de simuler une chaîne de transmission modulée QPSK comprenant l’émission et la réception d’un signal numérique.
+
+
+## Modulation du signal
+
+Pour réaliser une modulation QPSK, nous allons utiliser un modulateur IQ qui permet une modulation de phase en fonction de ses entrées I et Q. Un bit sur deux est envoyé dans la voie I et l’autre partie dans la voie Q. Ainsi, on obtient en sortie différents états de phase correspondant aux états possibles de I et Q. Ainsi cela permet de doubler le débit d’informations que l’on envoie tout en gardant la même bande passante, ce qui permet une meilleure efficacité spectrale.
 
 On utilise le génerateur de signal aléatoire pour générer les composantes I et Q du signal à transmettre. Notre modulateur fonctionne à 70 MHz, on doit donc génerer une porteuse à 70 MHz par un premier VCO, on s'assure de la fréquence à l'aide de l'analyseur de spectre :
 
-![](/home/maxence/TP_TIM/images/ChaineDeTransmission/VCO1.jpg)
+![](https://github.com/melurne/TP_TIM/blob/master/images/ChaineDeTransmission/VCO1.jpg)
 
-Notre démodulateur lui fonctionne à 870 MHz, il faut donc remoduler notre signal pour le transposer à 870 MHz grâce à un multiplieur et un second VCO à 800 MHz. On s'assure également de la fréquence à l'analyseur de spectre :
+Ce qui nous donne un message modulé autour des 70 MHz :
 
-![](/home/maxence/TP_TIM/images/ChaineDeTransmission/VCO2.jpg)
+![](https://github.com/melurne/TP_TIM/blob/master/images/ChaineDeTransmission/MessageModul%C3%A9.jpg)
 
-On observe alors à l'analyseur de spectre le Message modulé en sortie du modulatuer (autour de 70 MHz) :
+Notre démodulateur lui fonctionne à 870 MHz, il faut donc remoduler notre signal pour le transposer à 870 MHz grâce à un multiplieur et un second VCO à 800 MHz. On s'assure également de la fréquence du second VCO à l'analyseur de spectre :
 
-![](/home/maxence/TP_TIM/images/ChaineDeTransmission/MessageModulé.jpg)
+![](https://github.com/melurne/TP_TIM/blob/master/images/ChaineDeTransmission/VCO2.jpg)
 
-Puis avec la porteuse en sortie du multiplieur (autour de 870 MHz) :
+Nous avons donc en sortie du multiplieur notre signal avec la porteuse autour de 870 MHz :
 
-![](/home/maxence/TP_TIM/images/ChaineDeTransmission/Message+Porteuse.jpg)
+![](https://github.com/melurne/TP_TIM/blob/master/images/ChaineDeTransmission/Message%2BPorteuse.jpg)
 
+## Démodulation du signal
 
+Pour démoduler le signal à la sortie, on a besoin de récuperer la porteuse dans le signal, traditionnelement à l'aide d'une PLL. Dans notre cas on n'as pas de PLL à notre disposition, on va donc récuperer la porteuse directement en sortie du second VCO.
 
-Pour démoduler le signal à la sortie, on a besoin de récuperer la porteuse dans le signal, traditionnelement à l'aide d'une PLL. Dans notre cas on n'as pas de PLL à notre disposition, on va donc "tricher" et récuperer la porteuse directement en sortie du second VCO.
+Nous avons donc un montage final comme ci-dessous :
 
+![](https://github.com/melurne/TP_TIM/blob/master/images/ChaineDeTransmission/Montage.jpg)
 
+## Constellation QPSK
 
 Pour observer la constellation QPSK on observe le signal transmis à l'oscilloscope en mode XY :
 
-![](/home/maxence/TP_TIM/images/ChaineDeTransmission/Constellation.jpg)
-
-
+![](https://github.com/melurne/TP_TIM/blob/master/images/ChaineDeTransmission/Constellation.jpg)
 
 Le diagramme que l'on obtient est tourné par rapport à ce que l'on aurait dû obtenir. Cela vient du déphasage entre la porteuse génerée par le VCO et celle qui a été mélangée au signal.
 
 En effet la référence du diagramme (l'horizontale) est définie par l'entrée "porteuse" du démodulateur.
 
-![](/home/maxence/TP_TIM/images/ChaineDeTransmission/schema_constellation.png)
+![](https://github.com/melurne/TP_TIM/blob/master/images/ChaineDeTransmission/schema_constellation.png)
+
+## Conclusion
