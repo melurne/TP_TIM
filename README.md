@@ -4,11 +4,11 @@
 
 On génère un vacteur rempli aléatoirement de 0 et de 1 qui ferra office de message à transmettre. 
 
-![graph vecteur pas bo](./images/)
+![graph vecteur pas bo](/home/maxence/TP_TIM/images/Scilab/Message%20binaire.PNG)
 
 Pour que la modulation soit plus propre, on a besoin de convertir ce vecteur en une représentation d'un signal carré (étendre chaque bit sur une période).
 
-![Message codé](./images/)
+![Message codé](/home/maxence/TP_TIM/images/Scilab/info%20code.PNG)
 
 ---
 
@@ -20,7 +20,7 @@ On fait correspondre
 > 
 > Un bit à 1 -> +5V
 
-![NRZ]()
+![NRZ](/home/maxence/TP_TIM/images/Scilab/info%20code%20bip.PNG)
 
 ### Codage Manchester
 
@@ -30,7 +30,7 @@ On implémente un codage Manchesterpour la transmission du signal, ce codage tra
 > 
 > Un bit à 1 -> un front descendant
 
-![Manchester]()
+![Manchester](/home/maxence/TP_TIM/images/Scilab/mach%20+%20bip.PNG)
 
 ---
 
