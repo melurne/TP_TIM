@@ -6,11 +6,11 @@ Ce TP vise découvrir et comprendre les différentes méthodes de codage de sour
 
 On génère un vecteur rempli aléatoirement de 0 et de 1 qui ferra office de message à transmettre. 
 
-![graph vecteur pas bo](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/Message%20binaire.PNG)
+![graph vecteur pas bo](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/Message%20binaire.PNG)
 
 Pour que la modulation soit plus propre, on a besoin de convertir ce vecteur en une représentation d'un signal carré (étendre chaque bit sur une période).
 
-![Message codé](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/info%20code.PNG)
+![Message codé](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/info%20cod%C2%82e.PNG)
 
 ---
 
@@ -22,7 +22,7 @@ On fait correspondre
 > 
 > Un bit à 1 -> +5V
 
-![NRZ](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/info%20code%20bip.PNG)
+![NRZ](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/info%20cod%C2%82e%20bip.PNG)
 
 ### Codage Manchester
 
@@ -32,7 +32,7 @@ On implémente un codage Manchester pour la transmission du signal, ce codage tr
 > 
 > Un bit à 1 -> un front descendant
 
-![Manchester](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/mach%20+%20bip.PNG)
+![Manchester](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/mach%20%2B%20bip.PNG)
 
 ---
 
@@ -40,7 +40,7 @@ On implémente un codage Manchester pour la transmission du signal, ce codage tr
 
 L'utilisation du codage Manchester amène un premier zéro 2 foix plus éloigné qu'en bande de base de par la substitution d'un bit en bande de base par une période de signal au lieu d'une demi en bande de base. Le lobe du codage Manchester est donc deux fois plus grand que celui en bande de base.
 
- ![](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/dsp%20100.PNG)
+ ![](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/dsp%20100.PNG)
 
 ## Partie 2 : Adjonction d'un bruit gaussien, représentation temporelle et prise de décision
 
