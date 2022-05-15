@@ -1,14 +1,16 @@
 # Codage et Transmission en bande de base
 
-## Partie 1
+Ce TP vise découvrir et comprendre les différentes méthodes de codage de source et à leur transmission en bande passante. Tout ceci sera effectué à l'aide du logiciel Scilab.
+
+## Partie 1 : Génération d'une séquence pseudo-aléatoire et codage en ligne
 
 On génère un vecteur rempli aléatoirement de 0 et de 1 qui ferra office de message à transmettre. 
 
-![graph vecteur pas bo](/home/maxence/TP_TIM/images/Scilab/Message%20binaire.PNG)
+![graph vecteur pas bo](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/Message%20binaire.PNG)
 
 Pour que la modulation soit plus propre, on a besoin de convertir ce vecteur en une représentation d'un signal carré (étendre chaque bit sur une période).
 
-![Message codé](/home/maxence/TP_TIM/images/Scilab/info%20code.PNG)
+![Message codé](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/info%20code.PNG)
 
 ---
 
@@ -20,33 +22,35 @@ On fait correspondre
 > 
 > Un bit à 1 -> +5V
 
-![NRZ](/home/maxence/TP_TIM/images/Scilab/info%20code%20bip.PNG)
+![NRZ](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/info%20code%20bip.PNG)
 
 ### Codage Manchester
 
-On implémente un codage Manchesterpour la transmission du signal, ce codage transforme un bit du signal en une période d'un du nouveau signal et en faisant correspondre
+On implémente un codage Manchester pour la transmission du signal, ce codage transforme un bit du signal en une période du nouveau signal et en faisant correspondre
 
 > Un bit à 0 -> un front montant
 > 
 > Un bit à 1 -> un front descendant
 
-![Manchester](/home/maxence/TP_TIM/images/Scilab/mach%20+%20bip.PNG)
+![Manchester](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/mach%20+%20bip.PNG)
 
 ---
 
-## FFT
+### FFT
 
 L'utilisation du codage Manchester amène un premier zéro 2 foix plus éloigné qu'en bande de base de par la substitution d'un bit en bande de base par une période de signal au lieu d'une demi en bande de base. Le lobe du codage Manchester est donc deux fois plus grand que celui en bande de base.
 
- ![](/home/maxence/TP_TIM/images/Scilab/dsp%20100.PNG)
+ ![](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/dsp%20100.PNG)
 
-## Filtrage
+## Partie 2 : Adjonction d'un bruit gaussien, représentation temporelle et prise de décision
+
+### Filtrage
 
 Pour simuler l'action d'un canal de transmission, on va filtrer le signal afin de ne transmettre que le premier lobe de la FFT. Pour cela on annule le signal à partir du premier echantillon au dessous de 0.
 
-![](/home/maxence/TP_TIM/images/Scilab/filtrage%20nrz.PNG)
+![](https://github.com/melurne/TP_TIM/tree/master/images/Scilab/filtrage%20nrz.PNG)
 
-## Inclusion de bruit
+### Inclusion de bruit
 
 Pour simuler l'effet d'un canal de propagation on ajoute au signal filtré un bruit gaussien d'écart type paramètrable.
 
