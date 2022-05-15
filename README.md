@@ -62,6 +62,8 @@ On va ensuite utiliser le niveau moyen du signal sur une période pour discrimin
 
 ![](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/Signal_recompose.PNG)
 
+## Conclusion
+
 
 # Chaine De Transmission RF
 
