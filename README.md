@@ -70,6 +70,8 @@ On va ensuite utiliser le niveau moyen du signal sur une période pour discrimin
 
 ![](https://github.com/melurne/TP_TIM/blob/master/images/Scilab/Signal_recompose.PNG)
 
+Par nos essais, nous avons pu determiner que pour obtenir un TEB inférieur à 1/100, il faut un rapport signal sur bruit inférieur à 0.157 et qu'un TEB inférieur à 1/1000 n'est pas atteignable dans notre simulation.
+
 ## Conclusion
 
 Dans ce TP nous avons pu voir les différentes méthodes de codages pour une transmission en bande de base. Nous avons pu constater et comparer les avantages et inconvénients de codages comme le codage Manchester et NRZ bipolaire. Ce TP nous aura aussi permis de découvrir comment peuvent se calculer des signaux numériques à l’aide de code informatique.
@@ -81,7 +83,6 @@ Pour ce TP, nous allons réaliser le montage schématisé ci-dessous :
 ![](https://github.com/melurne/TP_TIM/blob/master/images/ChaineDeTransmission/SchemaChaineDeTranmission.png)
 
 Le but du montage est de simuler une chaîne de transmission modulée QPSK comprenant l’émission et la réception d’un signal numérique.
-
 
 ## Modulation du signal
 
@@ -127,4 +128,3 @@ En effet la référence du diagramme (l'horizontale) est définie par l'entrée 
 
 Nous avons réalisé un système d’émission / réception à l’aide d’une modulation 4 - QPSK. Pour ce faire, nous avons donc utilisé un modulateur IQ. Pour atteindre les 70 MHz de ce modulateur, nous avons mélanger le signal avec une porteuse de 70 MHz à l'aide d'un VCO. Puis nous avons de nouveau mélanger ce signal de 70 MHz à une deuxième porteuse de 800 MHz afin de pouvoir s'aligner sur la fréquence du démodulateur côté réception. La démodulation du signal reçu s'effectue avec un signal de référence de même fréquence et ayant pour phase celle de l’oscillateur local de l’émission. En temps normal il faudrait utiliser une PLL pour obtenir cette référence, mais nous avons préféré utiliser directement le signal de l’oscillateur local car c’est une solution plus simple ici. 
 En observant le diagramme de constellation de l’information récupéré, on remarque que cette dernière n’est pas parfaitement récupérée.
-

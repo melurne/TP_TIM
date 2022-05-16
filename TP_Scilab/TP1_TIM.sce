@@ -43,7 +43,7 @@ xtitle("FFT NRZ non filtrée");
 Mtfftcalc = fft(nr, -1);
 [filtre] = idfilter(F, Mtfftcalc);
 
-sig = 0.035;
+sig = 0.157;
 noise = sig*rand(Tet,"normal");
 scf();
 Signaltemp = ifft(filtre)+noise;
